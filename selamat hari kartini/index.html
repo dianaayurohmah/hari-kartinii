@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Hari Kartini</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,500&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-paper: #f9f4ee;
+            --sepia-dark: #3e2f24;
+            --emerald-deep: #1b4332;
+            --gold-subtle: #c5a059;
+            --text-main: #2d241e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-paper);
+            color: var(--text-main);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+       
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('https://www.transparenttextures.com/patterns/parchment.png');
+            opacity: 0.4;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        /* ----- NAVIGATION ----- */
+        nav {
+            padding: 25px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(249, 244, 238, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(62, 47, 36, 0.1);
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: var(--sepia-dark);
+            letter-spacing: 1px;
+        }
+
+        /* ----- HERO SECTION ----- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 10% 60px;
+            gap: 50px;
+        }
+
+        .hero-text {
+            flex: 1.2;
+        }
+
+        .hero-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            color: var(--sepia-dark);
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+
+        .hero-text h1 span {
+            display: block;
+            color: var(--emerald-deep);
+            font-style: italic;
+        }
+
+        .hero-text p {
+            font-size: 1.15rem;
+            margin-bottom: 40px;
+            color: #5a4a3f;
+            text-align: justify;
+        }
+
+        .hero-visual {
+            flex: 0.8;
+            position: relative;
+        }
+
+        .img-frame {
+            padding: 15px;
+            background: white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transform: rotate(3deg);
+            transition: 0.5s ease;
+        }
+
+        .img-frame:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        .hero-visual img {
+            width: 100%;
+            display: block;
+            filter: sepia(30%) contrast(1.1);
+        }
+
+        /* ----- BUTTON ----- */
+        .btn-cta {
+            display: inline-block;
+            padding: 18px 40px;
+            background-color: var(--emerald-deep);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: 0.3s;
+            border: 1px solid var(--emerald-deep);
+        }
+
+        .btn-cta:hover {
+            background-color: transparent;
+            color: var(--emerald-deep);
+        }
+
+        /* ----- APPRESIASI SECTION ----- */
+        .apresiasi {
+            padding: 100px 15%;
+            background-color: var(--sepia-dark);
+            color: var(--bg-paper);
+            text-align: center;
+        }
+
+        .apresiasi h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: var(--gold-subtle);
+        }
+
+        .apresiasi p {
+            font-size: 1.25rem;
+            font-style: italic;
+            font-weight: 300;
+            line-height: 2.2;
+        }
+
+        /* ----- SPIRIT SECTION ----- */
+        .spirit {
+            padding: 100px 10%;
+        }
+
+        .spirit-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .spirit-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--sepia-dark);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .spirit-card {
+            background: white;
+            padding: 45px;
+            border-bottom: 5px solid var(--gold-subtle);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            transition: 0.3s;
+        }
+
+        .spirit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        .spirit-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--emerald-deep);
+        }
+
+        /* ----- FOOTER ----- */
+        footer {
+            padding: 60px 10%;
+            text-align: center;
+            border-top: 1px solid rgba(62, 47, 36, 0.1);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            color: #8c7a6b;
+        }
+
+        @media (max-width: 968px) {
+            .hero { flex-direction: column; text-align: center; }
+            .hero-text { order: 2; }
+            .hero-visual { order: 1; }
+        }
+
+       
+
+    </style>
+</head>
+<body>
+    <script src="script.js"></script>
+    <nav>
+        <div class="nav-logo">SELAMAT HARI KARTINI</div>
+        <div id="liveClock" style="font-weight: 600; font-size: 0.9rem; color: var(--gold-subtle);"></div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Habis gelap <span>Terbitlah Terang🥀.</span></h1>
+                <p>
+                    Ibu Kartini pernah berkata bahwa banyak hal yang bisa menjatuhkan kita, tapi satu-satunya yang benar-benar bisa menjatuhkan kita adalah sikap kita sendiri. Di tengah tekanan media sosial dan standar kecantikan yang melelahkan, jadilah perempuan yang bangga dengan keunikan dan kecerdasannya masing-masing. Kita adalah generasi yang tidak hanya bermimpi, tapi juga berani mengeksekusi mimpi tersebut dengan aksi nyata. Tetaplah bersinar, tetaplah berani bersuara, dan jangan pernah biarkan siapapun memadamkan api semangat yang ada dalam dirimu. 🔥</p>
+                <a href="#lanjutkan" class="btn-cta">SEMANGAT KARTINI MINI👀 ⟶</a>
+            </div>
+            <div class="hero-visual">
+                <div class="img-frame">
+                    <img src="RA Kartini.jpg">
+                </div>
+            </div>
+        </section>
+
+        <section class="apresiasi">
+            <h2>Hormat Kita, Sang Putri Indonesia.</h2>
+            <p>
+                "Banyak hal yang bisa menjatuhkanmu, tapi satu-satunya hal yang benar-benar dapat menjatuhkanmu adalah sikapmu sendiri." — Terima kasih Ibu Kartini, karena keberanianmu menuliskan mimpi, kami tidak lagi terpenjara dalam ketidaktahuan. Kami bangga meneruskan api yang Engkau nyalakan.
+            </p>
+        </section>
+
+        <section class="spirit" id="lanjutkan">
+            <div class="spirit-header">
+                <h2>GEN Z WAJIB BACA👀🙊</h2>
+            </div>
+            <div class="card-grid">
+                <div class="spirit-card">
+                    <h3>Kekuatan Literasi</h3>
+                    <p>Jangan biarkan pikiranmu tumpul oleh arus zaman yang dangkal. Bacalah dunia seperti Kartini membaca masa depannya. Jadilah siswi yang cerdas dalam memilah informasi dan tajam dalam berpikir kritis.</p>
+                </div>
+                <div class="spirit-card">
+                    <h3>Kesantunan Berbudi</h3>
+                    <p>Kemajuan teknologi dan kecerdasan otak tidak akan berarti tanpa kehalusan budi pekerti. Jadilah wanita yang dihormati karena karyanya, namun dicintai karena kerendahan hati dan tutur katanya.</p>
+                </div>
+                <div class="spirit-card">
+                    <h3>Mandiri & Berdaya</h3>
+                    <p>Indonesia masa depan membutuhkan tangan-tangan terampilmu. Persiapkan dirimu untuk menjadi pilar keluarga dan bangsa. Jangan takut bermimpi setinggi langit, karena gerbangnya sudah dibuka oleh beliau.</p>
+                </div>
+                <div class="spirit-card">
+                    <h3>Semangat Kebangsaan</h3>
+                      <p>Kartini tidak hanya berjuang untuk wanita, tapi untuk kemajuan bangsanya. Di era global ini, jangan lupakan identitasmu. Jadilah generasi yang membawa harum nama Indonesia melalui karya, prestasi, dan rasa cinta tanah air yang tulus.</p>
+                    </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 PERINGATAN HARI KARTINI // DIBUAT DENGAN HORMAT OLEH DIANA AYU R.</p>
+    </footer>
+
+    <script>
+        // Jam Digital di Navbar (Sentuhan Modern)
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            document.getElementById('liveClock').innerText = timeString + " WIB";
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        // Scroll Animation (Muncul Pelan-pelan saat Scroll)
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.spirit-card, .apresiasi').forEach(el => {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(30px)";
+            el.style.transition = "all 0.8s ease-out";
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
